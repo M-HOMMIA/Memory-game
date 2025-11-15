@@ -1,188 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-   <meta charset="UTF-8">
-
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	  <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
- 
-
-    <title>Memory Game</title>
-
+    <title>Memory Game - Yassamine</title>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="main.css">
-  </head>
-  <body>
-	  
-	  <div class=" container d-flex flex-column justify-content-center align-items-center" id="boardcontainer" style="margin: 10px auto" > 
-		  <div id="top"> 
-			  
-			    <div class="control-buttons">
-      <span>Start Game</span>
+</head>
+<body>
+    
+    <!-- Start Game Overlay -->
+    <div class="control-buttons">
+        <span>Start Game</span>
     </div>
-    <div class="info-container" style="padding: 250px auto;margin-left: auto;margin-right: auto; ">
-      <div class="name">
-        Hello: <span></span>
-      </div>
-      <div class="tries">
-        Wrong Tries: <span>0</span>
-      </div>
+    
+    <!-- Main Container -->
+    <div id="boardcontainer">
+        
+        <!-- Top Section -->
+        <div id="top">
+            
+            <!-- Info Container -->
+            <div class="info-container">
+                <div class="name">
+                    Hello: <span>Guest</span>
+                </div>
+                <div class="tries">
+                    Wrong Tries: <span>0</span>
+                </div>
+            </div>
+            
+            <!-- New Game Button -->
+            <button type="button" id="NewGame">New Game</button>
+            
+        </div>
+        
+        <!-- Memory Board -->
+        <div id="memory_board">
+            
+            <!-- Game Blocks Container -->
+            <div class="memory-game-blocks">
+                
+                <!-- Angular Pair -->
+                <div class="game-block" data-technology="angular">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="imgs/angular.jpg" alt="Angular">
+                    </div>
+                </div>
+                <div class="game-block" data-technology="angular">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="imgs/angular.jpg" alt="Angular">
+                    </div>
+                </div>
+                
+                <!-- Facebook Pair -->
+                <div class="game-block" data-technology="vuejs">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="imgs/facebook.png" alt="Facebook">
+                    </div>
+                </div>
+                <div class="game-block" data-technology="vuejs">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="imgs/facebook.png" alt="Facebook">
+                    </div>
+                </div>
+                
+                <!-- Instagram Pair -->
+                <div class="game-block" data-technology="css3">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="imgs/instagram.jpg" alt="Instagram">
+                    </div>
+                </div>
+                <div class="game-block" data-technology="css3">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="imgs/instagram.jpg" alt="Instagram">
+                    </div>
+                </div>
+                
+                <!-- JavaScript Pair -->
+                <div class="game-block" data-technology="github">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="imgs/javascript.png" alt="JavaScript">
+                    </div>
+                </div>
+                <div class="game-block" data-technology="github">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="imgs/javascript.png" alt="JavaScript">
+                    </div>
+                </div>
+                
+                <!-- SQL Pair -->
+                <div class="game-block" data-technology="gulpjs">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="imgs/sql.jpg" alt="SQL">
+                    </div>
+                </div>
+                <div class="game-block" data-technology="gulpjs">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="imgs/sql.jpg" alt="SQL">
+                    </div>
+                </div>
+                
+                <!-- HTML Pair -->
+                <div class="game-block" data-technology="html5">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="imgs/html.png" alt="HTML">
+                    </div>
+                </div>
+                <div class="game-block" data-technology="html5">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="imgs/html.png" alt="HTML">
+                    </div>
+                </div>
+                
+                <!-- Twitter Pair -->
+                <div class="game-block" data-technology="jest">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="imgs/twitter.png" alt="Twitter">
+                    </div>
+                </div>
+                <div class="game-block" data-technology="jest">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="imgs/twitter.png" alt="Twitter">
+                    </div>
+                </div>
+                
+                <!-- MongoDB Pair -->
+                <div class="game-block" data-technology="mongodb">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="imgs/mongodb.png" alt="MongoDB">
+                    </div>
+                </div>
+                <div class="game-block" data-technology="mongodb">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="imgs/mongodb.png" alt="MongoDB">
+                    </div>
+                </div>
+                
+                <!-- Python Pair -->
+                <div class="game-block" data-technology="python">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="imgs/python.jpg" alt="Python">
+                    </div>
+                </div>
+                <div class="game-block" data-technology="python">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="imgs/python.jpg" alt="Python">
+                    </div>
+                </div>
+                
+                <!-- React Pair -->
+                <div class="game-block" data-technology="react">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="imgs/react.jpg" alt="React">
+                    </div>
+                </div>
+                <div class="game-block" data-technology="react">
+                    <div class="face front"></div>
+                    <div class="face back">
+                        <img src="imgs/react.jpg" alt="React">
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        <!-- Copyright -->
+        <div id="con">
+            Copyright © au développeur HOMMIA Messaoud
+        </div>
+        
     </div>
-	  
-	  <div style="margin-top: 50px;margin-bottom:-80px ;margin-right: auto;margin-left: auto; width: 650px;height: 250px; ;text-align: center">
-		  
-		  <button type="button" id="NewGame">New Game</button>
-	  </div>
-			  
-		  </div>
-		  <div class="row d-flex justify-content-center align-items-center" style="margin-right: auto;margin-left: auto" id="memory_board">
-			  
-			  <div class="memory-game-blocks" style="width: 1400px;height: 1000px;background-color:cornsilk;padding: 50px 50px 20px 50px; border: #999 1px solid;box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)">
-      <div class="game-block" data-technology="angular">
-        <div class="face front"></div>
-        <div class="face back">
-          <img src="imgs/angular.jpg" alt="" style="width: 235px;height: 197px; border-radius: 20px">
-        </div>
-      </div>
-      <div class="game-block" data-technology="angular" >
-        <div class="face front"></div>
-        <div class="face back">
-          <img src="imgs/angular.jpg" alt="" style="width: 235px;height: 197px; border-radius: 20px">
-        </div>
-      </div>
-      <div class="game-block" data-technology="vuejs" >
-        <div class="face front"></div>
-        <div class="face back">
-          <img src="imgs/facebook.png" alt="" style="width: 235px;height: 197px; border-radius: 20px">
-        </div>
-      </div>
-      <div class="game-block" data-technology="vuejs">
-        <div class="face front"></div>
-        <div class="face back">
-          <img src="imgs/facebook.png" alt="" style="width: 235px;height: 197px; border-radius: 20px">
-        </div>
-      </div>
-      <div class="game-block" data-technology="css3">
-        <div class="face front"></div>
-        <div class="face back">
-          <img src="imgs/instagram.jpg" alt="" style="width: 235px;height: 197px; border-radius: 20px">
-        </div>
-      </div>
-      <div class="game-block" data-technology="css3">
-        <div class="face front"></div>
-        <div class="face back">
-          <img src="imgs/instagram.jpg" alt="" style="width: 235px;height: 197px; border-radius: 20px">
-        </div>
-      </div>
-      <div class="game-block" data-technology="github">
-        <div class="face front"></div>
-        <div class="face back">
-          <img src="imgs/javascript.png" alt="" style="width: 235px;height: 197px; border-radius: 20px">
-        </div>
-      </div>
-      <div class="game-block" data-technology="github">
-        <div class="face front"></div>
-        <div class="face back">
-          <img src="imgs/javascript.png" alt="" style="width: 235px;height: 197px; border-radius: 20px">
-        </div>
-      </div>
-      <div class="game-block" data-technology="gulpjs">
-        <div class="face front"></div>
-        <div class="face back">
-          <img src="imgs/sql.jpg" alt="" style="width: 235px;height: 197px; border-radius: 20px">
-        </div>
-      </div>
-      <div class="game-block" data-technology="gulpjs">
-        <div class="face front"></div>
-        <div class="face back">
-          <img src="imgs/sql.jpg" alt="" style="width: 235px;height: 197px; border-radius: 20px">
-        </div>
-      </div>
-      <div class="game-block" data-technology="html5">
-        <div class="face front"></div>
-        <div class="face back">
-          <img src="imgs/html.png" alt="" style="width: 235px;height: 197px; border-radius: 20px">
-        </div>
-      </div>
-      <div class="game-block" data-technology="html5">
-        <div class="face front"></div>
-        <div class="face back">
-          <img src="imgs/html.png" alt="" style="width: 235px;height: 197px; border-radius: 20px">
-        </div>
-      </div>
-      <div class="game-block" data-technology="jest">
-        <div class="face front"></div>
-        <div class="face back">
-          <img src="imgs/twitter.png" alt="" style="width: 235px;height: 197px; border-radius: 20px">
-        </div>
-      </div>
-      <div class="game-block" data-technology="jest">
-        <div class="face front"></div>
-        <div class="face back">
-          <img src="imgs/twitter.png" alt="" style="width: 235px;height: 197px; border-radius: 20px">
-        </div>
-      </div>
-      <div class="game-block" data-technology="mongodb">
-        <div class="face front"></div>
-        <div class="face back">
-          <img src="imgs/mongodb.png" alt="" style="width: 235px;height: 197px; border-radius: 20px">
-        </div>
-      </div>
-      <div class="game-block" data-technology="mongodb">
-        <div class="face front"></div>
-        <div class="face back">
-          <img src="imgs/mongodb.png" alt="" style="width: 235px;height: 197px; border-radius: 20px">
-        </div>
-      </div>
-      <div class="game-block" data-technology="python">
-        <div class="face front"></div>
-        <div class="face back">
-          <img src="imgs/python.jpg" alt="" style="width: 235px;height: 197px; border-radius: 20px">
-        </div>
-      </div>
-      <div class="game-block" data-technology="python">
-        <div class="face front"></div>
-        <div class="face back">
-          <img src="imgs/python.jpg" alt="" style="width: 235px;height: 197px; border-radius: 20px">
-        </div>
-      </div>
-      <div class="game-block" data-technology="react">
-        <div class="face front"></div>
-        <div class="face back">
-          <img src="imgs/react.jpg" alt="" style="width: 235px;height: 197px; border-radius: 20px">
-        </div>
-      </div>
-      <div class="game-block" data-technology="react">
-        <div class="face front"></div>
-        <div class="face back">
-          <img src="imgs/react.jpg" alt="" style="width: 235px;height: 197px; border-radius: 20px">
-        </div>
-      </div>
-    </div>	   
-	  <div id ="con" style="margin-bottom:140px;margin-left: auto;margin-right: auto;height: 80px;width: 1200px;background-color: #ddd;border: 3px solid grey"> 
-		  <div style="text-align:center;font: bold 40px sans-serif ;color: #000;
-  text-shadow: -5px 0 #FFF, 0 5px #FFF, 5px 0 #FFF, 0 -5px #FFF;padding-top: 15px"> Copyright © au développeur HOMMIA Messaoud </div>
-<!--		<div style="text-align:center;font: bold 40px sans-serif ;text-shadow:2px 2px 0 #FFF,4px 4px 0 #000;padding-top: 25px"> Copyright © au développeur HOMMIA Messaoud </div>-->
-	  </div>
-			  
-			  
-		  </div>
-	  </div>
-	  
-	  
-  
-
-   
+    
+    <!-- Audio Files -->
     <audio id="success" src="audio/success.mp4" preload="auto"></audio>
     <audio id="fail" src="audio/fail.mp4" preload="auto"></audio>
-	  <audio id="start" src="audio/start.mp4" preload="auto"></audio>
-	  <audio id="yassamine" src="audio/yassamine.m4a" preload="auto"></audio>
-	  
+    <audio id="start" src="audio/start.mp4" preload="auto"></audio>
+    <audio id="yassamine" src="audio/yassamine.m4a" preload="auto"></audio>
+    
+    <!-- Custom JavaScript -->
     <script src="main.js"></script>
-  </body>
+    
+</body>
 </html>
